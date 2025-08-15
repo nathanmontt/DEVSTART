@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Menu from "../../../../../public/icons/Menu";
+import Book from "../../../../../public/icons/Book";
 
 const menuOptions = [
   { label: "Home", href: "#" },
@@ -105,6 +106,31 @@ function Main() {
           </div>
         </div>
       </header>
+
+      <main>
+        <section id="container-top-saying"
+          class=" border-2">
+          <div
+            className="container-wrap"
+            class="
+              border-1
+              border-gray-500
+              m-auto mt-35 w-55
+              p-1 rounded-sm
+              flex items-center justify-center
+            ">
+              <p className="community"
+                class="
+                  text-[11px]
+                  text-(--color-paragraph)
+              ">
+                  Um Espaço Para Novos Devs</p>
+              <span class="mx-2 text-(--color-paragraph)">|</span>
+              <Book />
+          </div>
+        </section>
+        {/* <Book /> */}
+      </main>
     </>
   );
 }
