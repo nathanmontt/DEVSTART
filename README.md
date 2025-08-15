@@ -71,7 +71,7 @@ Para se voluntariar, entre em contato com o criador da iniciativa DevStart atrá
 
 ---
 
-##  Licença & Autor(es)
+##  Licença & Autor
 
 Este README e o conteúdo associado à comunidade DevStart estão sob **licença MIT**. Veja `LICENSE.md` para mais detalhes.
 
