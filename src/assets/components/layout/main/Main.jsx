@@ -57,7 +57,7 @@ function Main() {
               hover:bg-(--color-main-btn-hover) transition-all ease-in duration-300
               rounded-sm
             ">
-            Acessar
+            Entrar
           </a>
 
           {/* Menu Hamburger (Mobile) */}
@@ -78,7 +78,7 @@ function Main() {
         >
           {/* Fundo opaco e blur */}
           <div
-            className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-all duration-300`}
+            className={`absolute inset-0 bg-black/80 backdrop-blur-sm transition-all duration-300`}
             onClick={() => setOpen(false)}
           ></div>
 
@@ -108,28 +108,95 @@ function Main() {
       </header>
 
       <main>
-        <section id="container-top-saying"
-          class=" border-2">
-          <div
-            className="container-wrap"
+        <div id="container-general">
+          <div id="container-central-text-info"
             class="
-              border-1
-              border-gray-500
-              m-auto mt-35 w-55
-              p-1 rounded-sm
-              flex items-center justify-center
-            ">
-              <p className="community"
+              h-dvh
+              flex flex-col items-center justify-center
+          ">
+            <section id="container-top-saying">
+              <div
+                className="container-wrap"
                 class="
-                  text-[11px]
-                  text-(--color-paragraph)
-              ">
-                  Um Espaço Para Novos Devs</p>
-              <span class="mx-2 text-(--color-paragraph)">|</span>
-              <Book />
+                  border-1
+                  border-gray-500
+                  p-1.5 rounded-sm
+                  flex items-center justify-center
+                ">
+                  <p className="community"
+                    class="
+                      text-[11px]
+                      text-(--color-paragraph)
+                  ">
+                      Um Espaço Para Novos Devs
+                    </p>
+                  <span class="mx-2 text-(--color-paragraph)">|</span>
+                  <Book />
+              </div>
+            </section>
+
+            <section id="hero-section" class="p-4">
+              <div className="container-hero-section">
+                <div className="container-texts">
+                  <h1
+                    className="project-slogan" class="text-4xl font-semibold text-center">
+                      Te iniciando no <em>dev</em>!
+                  </h1>
+                  <p
+                    className="projetct-description"
+                    class="
+                      text-center text-sm
+                      font-light
+                      text-(--color-paragraph)
+                      my-4 w-60
+                      m-auto
+                  ">
+                      Gosta de tecnologia e não sabe se situar? Não se preocupe: DevStart está aqui para te dar uma ajuda e te guiar por esse caminho!</p>
+                </div>
+
+                <section className="container-btns-cta"
+                  class="
+                    flex flex-col gap-3 justify-center
+                    text-center
+                    w-65 md:w-full m-auto
+                    mt-15
+
+                    md:inline-block
+                ">
+                  <a 
+                    href=""
+                    class="
+                      px-5 py-2
+                      bg-(--color-main-btn)
+                      hover:bg-(--color-main-btn-hover) transition-all ease-in duration-300
+                      rounded-sm
+
+                      md:px-10 md:py-3
+                      md:mr-5
+                  ">
+                    Entrar
+                  </a>
+                  
+                  <a href=""
+                    class="
+                    px-5 py-2
+                    bg-(--color-secondary-btn)
+                    hover:bg-(--color-secondary-btn-hover) transition-all ease-in duration-300
+                    rounded-sm
+
+                    md:px-10 md:py-3
+                  ">
+                    Explorar
+                  </a>
+                </section>
+              </div>
+            </section>
           </div>
-        </section>
-        {/* <Book /> */}
+
+          <section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, reprehenderit.
+          </section>
+        </div>
       </main>
     </>
   );

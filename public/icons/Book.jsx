@@ -4,8 +4,8 @@ function Book() {
         <svg 
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"
-            width="23px"
-            height="23px"
+            width="17px"
+            height="17px"
             viewBox="0 0 512 512"
             preserveAspectRatio="xMidYMid meet"
         >

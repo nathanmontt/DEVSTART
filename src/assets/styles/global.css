@@ -8,13 +8,24 @@
   --color-main-background: #161922;
   --color-main-btn: #352878;
   --color-main-btn-hover: #413192;
-  --color-secondary-btn: #3e4148;
+  --color-secondary-btn: #4f5155;
+  --color-secondary-btn-hover: #3e4148;
   --color-paragraph: #9fa1a8;
 
   --font-main: "Rajdhani", sans-serif;
   --font-second: "Roboto", sans-serif;
 }
 
-html {
-  /* background-color: #4b38a9; */
+/* Permite rolar, mas esconde a barra de rolagem */
+html, body {
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+
+  /* Testes */
+  /* background-color: #4f5155; */
+}
+
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
