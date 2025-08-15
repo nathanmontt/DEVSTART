@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+/* @theme for colors, typography, etc */
+@theme {
+  --color-main-background: #161922;
+  --color-main-btn: #352878;
+  --color-main-btn-hover: #413192;
+  --color-secondary-btn: #3e4148;
+  --color-paragraph: #9fa1a8;
+
+  --font-main: "Rajdhani", sans-serif;
+  --font-second: "Roboto", sans-serif;
+}
+
+html {
+  /* background-color: #4b38a9; */
+}
