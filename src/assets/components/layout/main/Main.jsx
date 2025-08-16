@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Menu from "../../../../../public/icons/Menu";
 import Book from "../../../../../public/icons/Book";
 
@@ -13,13 +13,32 @@ function Main() {
   const text = "devStart();";
   const [open, setOpen] = useState(false);
 
+  // Rolagem suave
+  const aboutRef = useRef(null);
+
   // Fecha o menu e navega para o link
   const handleMenuClick = () => { setOpen(false); };
 
+  // Função para scroll suave até a seção "about"
+  const handleExploreClick = (e) => {
+    e.preventDefault();
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
-      <header class="fixed top-0 left-0 right-0 z-20 bg-[--color-main-background]">
-        <nav class="flex justify-between items-center ml-7 mr-7 mt-6 md:ml-10 md:mr-10 md:mt-8">
+      <header
+        class="
+          fixed top-0 left-0 right-0 z-20 
+          bg-[--color-main-background]
+      ">
+        <nav
+          class="
+            flex justify-between items-center
+            mx-7 mt-6
+            md:mx-20 md:mt-10
+        ">
           {/* Logo */}
           <span class="relative inline-block select-none">
             <span class="absolute inset-0 invisible">{text}</span>
@@ -119,13 +138,14 @@ function Main() {
                 className="container-wrap"
                 class="
                   border-1
+                  mb-1
                   border-gray-500
                   p-1.5 rounded-sm
                   flex items-center justify-center
                 ">
                   <p className="community"
                     class="
-                      text-[11px]
+                      text-[10px]
                       text-(--color-paragraph)
                   ">
                       Um Espaço Para Novos Devs
@@ -139,19 +159,22 @@ function Main() {
               <div className="container-hero-section">
                 <div className="container-texts">
                   <h1
-                    className="project-slogan" class="text-4xl font-semibold text-center">
-                      Te iniciando no <em>dev</em>!
+                    className="project-slogan"
+                    class="
+                      text-5xl text-center
+                  ">
+                    Te iniciando no <em>dev</em>!
                   </h1>
                   <p
                     className="projetct-description"
                     class="
-                      text-center text-sm
+                      text-center
                       font-light
                       text-(--color-paragraph)
-                      my-4 w-60
+                      my-7 w-65
                       m-auto
                   ">
-                      Gosta de tecnologia e não sabe se situar? Não se preocupe: DevStart está aqui para te dar uma ajuda e te guiar por esse caminho!</p>
+                      Gosta de tecnologia e não sabe se situar? Não se preocupe: DevStart está aqui para te dar uma ajuda. Clique em <span className="text-white font-semibold">"Entrar no Servidor"</span> e descubra um mundo de possibilidades!</p>
                 </div>
 
                 <section className="container-btns-cta"
@@ -159,7 +182,7 @@ function Main() {
                     flex flex-col gap-3 justify-center
                     text-center
                     w-65 md:w-full m-auto
-                    mt-15
+                    mt-8
 
                     md:inline-block
                 ">
@@ -174,10 +197,11 @@ function Main() {
                       md:px-10 md:py-3
                       md:mr-5
                   ">
-                    Entrar
+                    Entrar no Servidor
                   </a>
                   
-                  <a href=""
+                  <a href="#Sobre"
+                    onClick={handleExploreClick}
                     class="
                     px-5 py-2
                     bg-(--color-secondary-btn)
@@ -193,8 +217,43 @@ function Main() {
             </section>
           </div>
 
-          <section>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, reprehenderit.
+          <section id="Sobre" ref={aboutRef} class="h-dvh">
+            <div id="container-flex-1"
+              className="
+                flex flex-col items-center
+                md:grid md:grid-cols-2 md:justify-self-center md:self-center md:place-content-center
+                mx-7 md:mx-20
+              ">
+              <div 
+                className="
+                  relative
+                  rounded-xl
+                  border border-white/10
+                  bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
+                  backdrop-blur-md
+                  shadow-xl
+                  w-65 h-50
+                  flex justify-center items-center
+                  mb-5
+                  overflow-hidden
+                ">
+
+                <img src="public/images/discord.png" alt=""
+                class="w-10" />
+                <img src="public/images/plus.png" alt="" class=" mx-5 w-5" />
+                <img src="public/images/code.png" alt="" class=" w-10" />
+              </div>
+
+              <div id="container-texts" className=" mx-7 w-85">
+                <h1
+                  className=" font-main text-5xl w-50 md:w-65
+                    font-semibold text-center m-auto md:text-5xl my-5">Mais que um servidor!</h1>
+                
+                <p className="text-center m-auto w-65 md:w-70 lg:w-90 text-(--color-paragraph)">
+                  A iniciativa <span className="text-white font-main text-lg font-bold group">devStart();</span> é uma comunidade colaborativa e gratuita criada para ajudar iniciantes que nunca programaram a darem os primeiros passos na área, sempre com o suporte de uma comunidade ativa!
+                </p>
+              </div>              
+            </div>
           </section>
         </div>
       </main>
