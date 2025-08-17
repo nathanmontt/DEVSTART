@@ -217,42 +217,126 @@ function Main() {
             </section>
           </div>
 
-          <section id="Sobre" ref={aboutRef} class="h-dvh">
-            <div id="container-flex-1"
-              className="
-                flex flex-col items-center
-                md:grid md:grid-cols-2 md:justify-self-center md:self-center md:place-content-center
-                mx-7 md:mx-20
-              ">
-              <div 
-                className="
-                  relative
-                  rounded-xl
-                  border border-white/10
-                  bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
-                  backdrop-blur-md
-                  shadow-xl
-                  w-65 h-50
-                  flex justify-center items-center
-                  mb-5
-                  overflow-hidden
-                ">
 
-                <img src="public/images/discord.png" alt=""
-                class="w-10" />
-                <img src="public/images/plus.png" alt="" class=" mx-5 w-5" />
-                <img src="public/images/code.png" alt="" class=" w-10" />
+          <section id="Sobre" ref={aboutRef}>
+            <div className="flex flex-col gap-10 items-center w-65 md:w-150 mx-auto">
+              {/* Card 1: card left, text right */}
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 border-2">
+                <div
+                  className="
+                    relative
+                    rounded-xl
+                    border border-white/10
+                    bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
+                    backdrop-blur-md
+                    shadow-xl
+                    w-64 h-52
+                    flex justify-center items-center
+                    overflow-hidden
+                  "
+                >
+                  <img src="/images/discord.png" alt="" className="w-10" />
+                  <img src="/images/plus.png" alt="" className="mx-5 w-5" />
+                  <img src="/images/code.png" alt="" className="w-10" />
+                </div>
+                <div className="flex-1">
+                  <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
+                    Mais que um servidor!
+                  </h1>
+                  <p className="text-center md:text-left text-(--color-paragraph)">
+                    A iniciativa <span className="text-white font-main text-lg font-bold group">devStart();</span> é uma comunidade colaborativa e gratuita criada para ajudar iniciantes que nunca programaram a darem os primeiros passos na área, sempre com o suporte de uma comunidade ativa!
+                  </p>
+                </div>
               </div>
 
-              <div id="container-texts" className=" mx-7 w-85">
-                <h1
-                  className=" font-main text-5xl w-50 md:w-65
-                    font-semibold text-center m-auto md:text-5xl my-5">Mais que um servidor!</h1>
-                
-                <p className="text-center m-auto w-65 md:w-70 lg:w-90 text-(--color-paragraph)">
-                  A iniciativa <span className="text-white font-main text-lg font-bold group">devStart();</span> é uma comunidade colaborativa e gratuita criada para ajudar iniciantes que nunca programaram a darem os primeiros passos na área, sempre com o suporte de uma comunidade ativa!
-                </p>
-              </div>              
+              {/* Card 2: text left, card right */}
+              <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8">
+                <div
+                  className="
+                    relative
+                    rounded-xl
+                    border border-white/10
+                    bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
+                    backdrop-blur-md
+                    shadow-xl
+                    w-64 h-52
+                    flex justify-center items-center
+                    overflow-hidden
+                  "
+                >
+                  <img src="/images/html.png" alt="" className="w-8" />
+                  <img src="/images/css-3.png" alt="" className="mx-5 w-8" />
+                  <img src="/images/javascript.png" alt="" className="w-8" />
+                  <img src="/images/github.png" alt="" className="ml-5 w-8" />
+                </div>
+                <div className="flex-1">
+                  <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
+                    Aprenda sobre a Web!
+                  </h1>
+                  <p className="text-center md:text-left text-(--color-paragraph)">
+                    Domine o básico de desenvolvimento web e ganhe autonomia para criar por conta própria — <strong>com HTML, CSS, JavaScript</strong>, Git e muito mais!
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: card left, text right */}
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8">
+                <div
+                  className="
+                    relative
+                    rounded-xl
+                    border border-white/10
+                    bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
+                    backdrop-blur-md
+                    shadow-xl
+                    w-64 h-52
+                    flex justify-center items-center
+                    overflow-hidden
+                  "
+                >
+                  <img src="/images/discord.png" alt="" className="w-10" />
+                  <img src="/images/plus.png" alt="" className="mx-5 w-5" />
+                  <img src="/images/code.png" alt="" className="w-10" />
+                </div>
+                <div className="flex-1">
+                  <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
+                    Comunidade ativa!
+                  </h1>
+                  <p className="text-center md:text-left text-(--color-paragraph)">
+                    Participe de discussões, tire dúvidas e compartilhe conhecimento com outros devs iniciantes e experientes. Aqui você nunca estará sozinho!
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4: text left, card right */}
+              <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8">
+                <div
+                  className="
+                    relative
+                    rounded-xl
+                    border border-white/10
+                    bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
+                    backdrop-blur-md
+                    shadow-xl
+                    w-64 h-52
+                    flex justify-center items-center
+                    overflow-hidden
+                  "
+                >
+                  <img src="/images/html.png" alt="" className="w-8" />
+                  <img src="/images/css-3.png" alt="" className="mx-5 w-8" />
+                  <img src="/images/javascript.png" alt="" className="w-8" />
+                  <img src="/images/github.png" alt="" className="ml-5 w-8" />
+                </div>
+                <div className="flex-1">
+                  <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
+                    Evolua sempre!
+                  </h1>
+                  <p className="text-center md:text-left text-(--color-paragraph)">
+                    Continue aprendendo, evoluindo e se conectando com a comunidade. O crescimento é constante e juntos vamos mais longe!
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
         </div>
