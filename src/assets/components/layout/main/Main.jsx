@@ -13,6 +13,9 @@ function Main() {
   const text = "devStart();";
   const [open, setOpen] = useState(false);
 
+  // Modal de regras
+  const [showRulesModal, setShowRulesModal] = useState(false);
+
   // Rolagem suave
   const aboutRef = useRef(null);
 
@@ -26,6 +29,16 @@ function Main() {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Abrir modal de regras
+  const handleOpenRules = (e) => {
+    e.preventDefault();
+    setShowRulesModal(true);
+  };
+
+  // Fechar modal de regras
+  const handleCloseRules = () => setShowRulesModal(false);
+
   return (
     <>
       <header
@@ -219,7 +232,7 @@ function Main() {
 
 
           <section id="Sobre" ref={aboutRef}>
-            <div className="flex flex-col gap-10 items-center w-65 md:w-180 mx-auto lg:w-300">
+            <div className="flex flex-col gap-10 items-center w-65 md:w-180 mx-auto lg:w-215">
               {/* Card 1: card left, text right */}
               <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-15 mb-10">
                 <div
@@ -337,6 +350,108 @@ function Main() {
           </section>
         </div>
       </main>
+
+      <footer className="bg-(--color-footer) p-8 mt-10">
+        <div className="general-footer-container
+          md:mx-12
+          lg:flex lg:justify-between
+        ">
+          <div className="left-part-content mb-10">
+            <span className="relative inline-block select-none">
+              <span className="absolute inset-0 invisible">{text}</span>
+              <p className="text-white font-main text-2xl group cursor-pointer relative">
+                <span className="whitespace-nowrap relative">{text}</span>
+                <span className="absolute ml-1 w-0.5 h-7 bg-white animate-pulse"></span>
+              </p>
+            </span>
+            <p className="text-info text-(--color-paragraph)">
+              Dando um empurrãozinho na sua caminhada <em>dev</em>!
+            </p>
+          </div>
+
+          <div className="center-part-content">
+            <div className="container-1 mb-8">
+              <p className="title-container-1 text-4xl">Fundador</p>
+              <ul className="list-options-container-1 text-(--color-paragraph) mt-3">
+                <li>
+                  <a href="https://www.linkedin.com/in/nathan-monteiro/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+                  </li>
+                <li><a href="https://github.com/nathanmontt" target="_blank" rel="noopener noreferrer">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/nathan-monteiro/" target="_blank" rel="noopener noreferrer">Portifólio</a></li>
+                <li><a href="https://www.instagram.com/nathanmontt" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="right-part-content">
+            <div className="container-2">
+              <p className="title-container-2 text-4xl">Regras</p>
+              <ul className="list-options-container-2 mt-3 text-(--color-paragraph)">
+                <li>
+                  <a href="#" onClick={handleOpenRules}>Termos de Uso</a>
+                </li>
+                <li>
+                  <a href="#" onClick={handleOpenRules}>Política de Privacidade</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="container-copyright text-(--color-paragraph)">
+          <div className="relative w-full my-8">
+            <span
+              className="
+                block
+                w-full
+                h-px
+                bg-[#636363]
+                opacity-70
+                relative
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:top-1/2
+                before:w-full
+                before:h-px
+                before:bg-[#18192a]
+                before:opacity-80
+                before:-translate-y-1/2
+                before:z-10
+              "
+            ></span>
+          </div>
+          <p className="copyright">&copy; Todos os direitos reservados.</p>
+        </div>
+
+        {/* Modal de Regras */}
+        {showRulesModal && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+            style={{ backdropFilter: "blur(2px)" }}
+          >
+            <div
+              className="bg-white text-black rounded-md p-6 max-w-md w-full mx-4 relative"
+              style={{ minHeight: "200px" }}
+            >
+              <button
+                onClick={handleCloseRules}
+                className="absolute top-3 right-4 text-2xl font-bold cursor-pointer"
+                aria-label="Fechar"
+              >
+                ×
+              </button>
+              <h2 className="text-center text-xl font-bold mb-4">Regras</h2>
+              <div>
+                <p>
+                  Aqui vão as regras, termos de uso ou política de privacidade do seu projeto.  
+                  Você pode personalizar este conteúdo conforme necessário.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </footer>
     </>
   );
 }
