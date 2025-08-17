@@ -131,7 +131,7 @@ function Main() {
           <div id="container-central-text-info"
             class="
               h-dvh
-              flex flex-col items-center justify-center
+              flex flex-col justify-center items-center
           ">
             <section id="container-top-saying">
               <div
@@ -174,7 +174,7 @@ function Main() {
                       my-7 w-65
                       m-auto
                   ">
-                      Gosta de tecnologia e não sabe se situar? Não se preocupe: DevStart está aqui para te dar uma ajuda. Clique em <span className="text-white font-semibold">"Entrar no Servidor"</span> e descubra um mundo de possibilidades!</p>
+                      Perdido em tecnologia e sem saber se situar? Não se preocupe: DevStart está aqui para te dar uma mãozinha. Clique em <span className="text-white font-semibold">"Entrar no Servidor"</span> e descubra um mundo de possibilidades!</p>
                 </div>
 
                 <section className="container-btns-cta"
@@ -219,9 +219,9 @@ function Main() {
 
 
           <section id="Sobre" ref={aboutRef}>
-            <div className="flex flex-col gap-10 items-center w-65 md:w-150 mx-auto">
+            <div className="flex flex-col gap-10 items-center w-65 md:w-180 mx-auto lg:w-300">
               {/* Card 1: card left, text right */}
-              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 border-2">
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-15 mb-10">
                 <div
                   className="
                     relative
@@ -230,17 +230,17 @@ function Main() {
                     bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
                     backdrop-blur-md
                     shadow-xl
-                    w-64 h-52
+                    w-65 h-58
                     flex justify-center items-center
                     overflow-hidden
                   "
                 >
-                  <img src="/images/discord.png" alt="" className="w-10" />
-                  <img src="/images/plus.png" alt="" className="mx-5 w-5" />
-                  <img src="/images/code.png" alt="" className="w-10" />
+                  <img src="/images/discord.png" alt="Ícone do Discord" className="w-13" />
+                  <img src="/images/plus.png" alt="Ícone do Símbolo Mais/Adição" className="mx-5 w-7" />
+                  <img src="/images/code.png" alt="Ícone de Código/Tag HTML" className="w-13" />
                 </div>
                 <div className="flex-1">
-                  <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
+                  <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-3">
                     Mais que um servidor!
                   </h1>
                   <p className="text-center md:text-left text-(--color-paragraph)">
@@ -250,7 +250,7 @@ function Main() {
               </div>
 
               {/* Card 2: text left, card right */}
-              <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8">
+              <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-15 mb-10">
                 <div
                   className="
                     relative
@@ -259,28 +259,28 @@ function Main() {
                     bg-gradient-to-br from-[#23243a]/80 via-[#18192a]/80 to-[#18192a]/100
                     backdrop-blur-md
                     shadow-xl
-                    w-64 h-52
+                    w-65 h-58
                     flex justify-center items-center
                     overflow-hidden
                   "
                 >
-                  <img src="/images/html.png" alt="" className="w-8" />
-                  <img src="/images/css-3.png" alt="" className="mx-5 w-8" />
-                  <img src="/images/javascript.png" alt="" className="w-8" />
-                  <img src="/images/github.png" alt="" className="ml-5 w-8" />
+                  <img src="/images/html.png" alt="Ícone de HTML5" className="w-9" />
+                  <img src="/images/css-3.png" alt="Ícone de CSS3" className="mx-5 w-9" />
+                  <img src="/images/javascript.png" alt="Ícone de JavaScript" className="w-9" />
+                  <img src="/images/github.png" alt="Ícone de Github" className="ml-5 w-9" />
                 </div>
                 <div className="flex-1">
                   <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
                     Aprenda sobre a Web!
                   </h1>
                   <p className="text-center md:text-left text-(--color-paragraph)">
-                    Domine o básico de desenvolvimento web e ganhe autonomia para criar por conta própria — <strong>com HTML, CSS, JavaScript</strong>, Git e muito mais!
+                    Domine o básico de desenvolvimento web e ganhe autonomia para criar por conta própria — <strong>com HTML, CSS, JavaScript, Git</strong>, e muito mais!
                   </p>
                 </div>
               </div>
 
               {/* Card 3: card left, text right */}
-              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8">
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-15 mb-10">
                 <div
                   className="
                     relative
@@ -294,22 +294,21 @@ function Main() {
                     overflow-hidden
                   "
                 >
-                  <img src="/images/discord.png" alt="" className="w-10" />
-                  <img src="/images/plus.png" alt="" className="mx-5 w-5" />
-                  <img src="/images/code.png" alt="" className="w-10" />
+                  <img src="/images/communities.png" alt="Comunidade Conectada" className="w-25" />
+
                 </div>
                 <div className="flex-1">
                   <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
                     Comunidade ativa!
                   </h1>
                   <p className="text-center md:text-left text-(--color-paragraph)">
-                    Participe de discussões, tire dúvidas e compartilhe conhecimento com outros devs iniciantes e experientes. Aqui você nunca estará sozinho!
+                    Todos estão começando, então nada melhor do que participar de discussões enriquecedoras, tirar dúvidas com moderadores e com outros participantes e compartilhar o conhecimento aprendido com outros <em>devs</em> iniciantes. <strong>Aqui você nunca estará sozinho!</strong>
                   </p>
                 </div>
               </div>
 
               {/* Card 4: text left, card right */}
-              <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8">
+              <div className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-15">
                 <div
                   className="
                     relative
@@ -323,17 +322,14 @@ function Main() {
                     overflow-hidden
                   "
                 >
-                  <img src="/images/html.png" alt="" className="w-8" />
-                  <img src="/images/css-3.png" alt="" className="mx-5 w-8" />
-                  <img src="/images/javascript.png" alt="" className="w-8" />
-                  <img src="/images/github.png" alt="" className="ml-5 w-8" />
+                  <img src="/images/connect.png" alt="" className="w-30" />
                 </div>
                 <div className="flex-1">
                   <h1 className="font-main text-3xl md:text-4xl font-semibold text-center md:text-left mb-2">
-                    Evolua sempre!
+                    Participe Agora!
                   </h1>
                   <p className="text-center md:text-left text-(--color-paragraph)">
-                    Continue aprendendo, evoluindo e se conectando com a comunidade. O crescimento é constante e juntos vamos mais longe!
+                    Começar não é fácil, e muitas vezes sozinho pode ser difícil, mas com a comunidade está aqui para facilitar o seu caminho. Junte-se à <span className="text-white font-main text-lg font-bold group">devStart();</span>: <strong>um espaço colaborativo onde cada linha de código que você escreve te aproxima mais de um futuro promissor!</strong>
                   </p>
                 </div>
               </div>
