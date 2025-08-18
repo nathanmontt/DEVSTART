@@ -158,21 +158,45 @@ function Main() {
 
           {/* Menu Desktop */}
           <ul className="hidden md:flex flex-1 justify-center gap-6 font-second items-center">
-            {menuOptions.map((opt) => (
-              <li key={opt.label}>
-                <a
-                  href={opt.href}
-                  className="
-                    relative font-light transition-all duration-150
-                    after:content-[''] after:block after:absolute after:left-0 after:-bottom-2
-                    after:h-[1px] after:bg-white after:rounded-full after:w-0
-                    hover:after:w-full after:transition-all after:duration-500
-                  "
-                >
-                  {opt.label}
-                </a>
-              </li>
-            ))}
+            {menuOptions.map((opt) => {
+              const isDisabled = opt.label === "FAQ" || opt.label === "Blog";
+              return (
+                <li key={opt.label}>
+                  <a
+                    href={isDisabled ? "#" : opt.href}
+                    tabIndex={isDisabled ? -1 : 0}
+                    aria-disabled={isDisabled}
+                    onClick={e => {
+                      if (isDisabled) e.preventDefault();
+                    }}
+                    className={
+                      `
+                        relative font-light transition-all duration-150
+                        after:content-[''] after:block after:absolute after:left-0 after:-bottom-2
+                        after:h-[1px] after:bg-white after:rounded-full after:w-0
+                        hover:after:w-full after:transition-all after:duration-500
+                        px-2
+                        ` +
+                      (isDisabled
+                        ? " cursor-not-allowed text-gray-400 hover:text-gray-400"
+                        : " cursor-pointer hover:text-white")
+                    }
+                    onMouseEnter={e => {
+                      if (isDisabled) {
+                        e.currentTarget.textContent = "Em breve";
+                      } else {
+                        e.currentTarget.textContent = opt.label;
+                      }
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.textContent = opt.label;
+                    }}
+                  >
+                    {opt.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Join Desktop */}
