@@ -37,24 +37,100 @@ function Main() {
   // Conteúdo dos modais
   const termosUso = [
     <>
-      <strong>1. Aceitação dos Termos:</strong> Ao acessar ou utilizar o serviço <strong>DevStart()</strong>, você concorda em cumprir estes Termos.
+      <strong>1. Aceitação dos Termos:</strong>
+      <br />
+      Ao acessar ou utilizar o serviço <span className="text-black font-main text-lg font-bold group">devStart();</span>, você concorda em cumprir estes Termos. Se não concordar com algum ponto, por favor, <strong>não utilize o serviço!</strong>
     </>,
     <>
-      <strong>1. Aceitação dos Termos:</strong> Ao acessar ou utilizar o serviço <strong>DevStart()</strong>, você concorda em cumprir estes Termos.
+      <strong>2. Uso Permitido:</strong>
+      <br />
+      Você pode acessar conteúdos, interagir na comunidade e desenvolver projetos conforme orientado no canal de texto <strong>#instruções</strong>. É <strong>proibido</strong> usar nosso espaço para <strong><em>spam</em>, discurso de ódio, conteúdo ilegal ou violação dos direitos de terceiros</strong>.
     </>,
-    "1. Aceitação dos Termos: Ao acessar ou utilizar o serviço DevStart(), você concorda em cumprir estes Termos. Se não concordar com algum ponto, por favor, não utilize o serviço.",
-    "Se não concordar com algum ponto, por favor, não utilize o serviço.",
-    "O uso é permitido apenas para fins educacionais e de colaboração.",
-    "Não é permitido compartilhar conteúdo ofensivo, ilegal ou que viole direitos de terceiros.",
-    "A equipe DevStart() pode modificar estes Termos a qualquer momento.",
+    <>
+      <strong>3. Propriedade Intelectual:</strong>
+      <br />
+      Todos os textos, imagens, logotipo e recursos <strong>são de propriedade da <span className="text-black font-main text-lg font-bold group">devStart();</span></strong>. Você pode usá-los apenas para fins educativos ou comunitários com atribuição clara. <strong>Não é permitido reprodução comercial sem autorização!</strong>
+    </>,
+    <>
+      <strong>4. Suspensão ou remoção:</strong>
+      <br />
+      Caso haja violação aos Termos, a equipe reserva-se ao direito de <strong>suspender ou remover sua participação, com ou sem aviso prévio!</strong>
+    </>,
+    <>
+      <strong>5. Limitação de Responsabilidade:</strong>
+      <br />
+      O serviço é fornecido "como está", sem garantias implícitas ou explícitas. A <span className="text-black font-main text-lg font-bold group">devStart();</span> não se responsabiliza por perdas diretas ou indiretas decorrentes do uso do serviço ou projetos compartilhados.
+    </>,
+    <>
+      <strong>6. Alterações nos Termos:</strong>
+      <br />
+      Podemos revisar estes Termos a <strong>qualquer momento</strong>. Quando isso ocorrer, informaremos via <em><strong>site</strong></em> ou via canal de texto <strong>#anúncios</strong>. O uso contínuo após alterações significa sua concordância com os novos termos.
+    </>,
+    <>
+      <strong>7. Legislação aplicável:</strong>
+      <br />
+      Estes Termos são regidos e interpretados conforme a <strong>legislação brasileira</strong>.
+    </>,
+    <>
+      <strong>8. Contato:</strong>
+      <br />
+      Dúvidas ou solicitações sobre estes Termos podem ser enviadas via mensagem direta para os administradores com o assunto <strong>Dúvida/Solicitação sobre [assunto desejado]</strong>.
+    </>,
   ];
 
   const politicaPrivacidade = [
-    "Coletamos apenas informações essenciais para funcionamento da comunidade.",
-    "Seus dados não são compartilhados com terceiros sem consentimento.",
-    "Você pode solicitar a exclusão dos seus dados a qualquer momento.",
-    "Utilizamos cookies apenas para melhorar sua experiência.",
-    "Ao utilizar o site, você concorda com esta política.",
+    <>
+      <strong>1. Responsável:</strong>
+      <br />
+      A iniciativa <span className="text-black font-main text-lg font-bold group">devStart();</span>, idealizada por <strong>Nathan Monteiro</strong>, é responsável pelo tratamento dos dados por aqui.
+    </>,
+    <>
+      <strong>2. Dados coletados:</strong>
+      <br />
+      Podemos coletar informações como:
+      <ul>
+        <li>
+          - Informações voluntárias: nome, nickname, e-mail (opcional, se capturado via formulários).
+        </li>
+        {/* <li>
+          - Dados técnicos (log do site): IP, navegador, sistema operacional e dados de uso (para melhorar a experiência).  
+        </li> */}
+      </ul>
+    </>,
+    <>
+      <strong>3. Finalidades da coleta:</strong>
+      <br />
+      <ul>
+        <li>- Oferecer e melhorar a <em>landing page</em> e o acesso ao servidor;</li>
+        <li>- Comunicar atualizações e eventos importantes;</li>
+        <li>- Cumprir obrigações legais ou normativas;</li>
+      </ul>
+    </>,
+    <>
+      <strong>4. Compartilhamento de dados:</strong>
+      <br />
+      Os dados <strong>não serão vendidos ou repassados a terceiros, exceto se exigido por lei</strong>. Analíticas podem ser usadas de forma anônima e agregada.
+    </>,
+    <>
+      <strong>5. Segurança:</strong>
+      <br />
+      Utilizamos práticas adequadas para proteger seus dados contra acesso não autorizado, perda ou alteração.  
+    </>,
+    <>
+      <strong>6. Direitos do usuário:</strong>
+      <br />
+      Você pode solicitar acesso, correção, exclusão ou portabilidade dos seus dados. Também pode revogar o consentimento a qualquer momento.
+    </>,
+    <>
+      <strong>7. Validade da política:</strong>
+      <br />
+      Mudanças nesta Política serão informadas via canal de texto <strong>#anúncios</strong> e a continuidade de acesso implica aceitação da nova versão.
+    </>,
+    <>
+      <strong>8. Contato:</strong>
+      <br />
+      Para questões sobre privacidade, entre em contato via mensagem direta para os administradores.
+    </>,
   ];
 
   return (
@@ -468,7 +544,7 @@ function Main() {
             style={{ backdropFilter: "blur(2px)" }}
           >
             <div
-              className="bg-white text-black rounded-md p-6 w-[600px] max-w-[95vw] mx-4 relative"
+              className="bg-white text-black rounded-md p-6 w-[700px] max-w-[95vw] mx-4 relative"
               style={{ minHeight: "200px" }}
             >
               <button
@@ -481,7 +557,10 @@ function Main() {
               <h2 className="text-center text-xl font-bold mb-4">
                 {rulesModal === "termos" ? "Termos de Uso" : "Política de Privacidade"}
               </h2>
-              <div>
+              <div
+                className="overflow-y-auto"
+                style={{ maxHeight: "350px" }}
+              >
                 {(rulesModal === "termos" ? termosUso : politicaPrivacidade).map((item, idx) => (
                   <div key={idx} className="mb-2">
                     {item}
