@@ -3,8 +3,8 @@ import Menu from "../../../../../public/icons/Menu";
 import Book from "../../../../../public/icons/Book";
 
 const menuOptions = [
-  { label: "Home", href: "#" },
-  { label: "Sobre", href: "#" },
+  { label: "Home", href: "index.html" },
+  { label: "Sobre", href: "#Sobre" },
   { label: "Blog", href: "#" },
   { label: "FAQ", href: "#" },
 ];
@@ -13,16 +13,11 @@ function Main() {
   const text = "devStart();";
   const [open, setOpen] = useState(false);
 
-  // Modal de regras
-  const [showRulesModal, setShowRulesModal] = useState(false);
-
-  // Rolagem suave
+  // Modal de regras: 'none', 'termos', 'privacidade'
+  const [rulesModal, setRulesModal] = useState("none");
   const aboutRef = useRef(null);
+  const handleMenuClick = () => setOpen(false);
 
-  // Fecha o menu e navega para o link
-  const handleMenuClick = () => { setOpen(false); };
-
-  // Função para scroll suave até a seção "about"
   const handleExploreClick = (e) => {
     e.preventDefault();
     if (aboutRef.current) {
@@ -31,17 +26,41 @@ function Main() {
   };
 
   // Abrir modal de regras
-  const handleOpenRules = (e) => {
+  const handleOpenRules = (tipo) => (e) => {
     e.preventDefault();
-    setShowRulesModal(true);
+    setRulesModal(tipo);
   };
 
   // Fechar modal de regras
-  const handleCloseRules = () => setShowRulesModal(false);
+  const handleCloseRules = () => setRulesModal("none");
+
+  // Conteúdo dos modais
+  const termosUso = [
+    <>
+      <strong>1. Aceitação dos Termos:</strong> Ao acessar ou utilizar o serviço <strong>DevStart()</strong>, você concorda em cumprir estes Termos.
+    </>,
+    <>
+      <strong>1. Aceitação dos Termos:</strong> Ao acessar ou utilizar o serviço <strong>DevStart()</strong>, você concorda em cumprir estes Termos.
+    </>,
+    "1. Aceitação dos Termos: Ao acessar ou utilizar o serviço DevStart(), você concorda em cumprir estes Termos. Se não concordar com algum ponto, por favor, não utilize o serviço.",
+    "Se não concordar com algum ponto, por favor, não utilize o serviço.",
+    "O uso é permitido apenas para fins educacionais e de colaboração.",
+    "Não é permitido compartilhar conteúdo ofensivo, ilegal ou que viole direitos de terceiros.",
+    "A equipe DevStart() pode modificar estes Termos a qualquer momento.",
+  ];
+
+  const politicaPrivacidade = [
+    "Coletamos apenas informações essenciais para funcionamento da comunidade.",
+    "Seus dados não são compartilhados com terceiros sem consentimento.",
+    "Você pode solicitar a exclusão dos seus dados a qualquer momento.",
+    "Utilizamos cookies apenas para melhorar sua experiência.",
+    "Ao utilizar o site, você concorda com esta política.",
+  ];
 
   return (
     <>
       <header
+        id="Main"
         class="
           fixed top-0 left-0 right-0 z-20 
           bg-[--color-main-background]
@@ -232,7 +251,7 @@ function Main() {
 
 
           <section id="Sobre" ref={aboutRef}>
-            <div className="flex flex-col gap-10 items-center w-65 md:w-180 mx-auto lg:w-215">
+            <div className="flex flex-col gap-10 items-center w-65 md:w-180 mx-auto lg:w-215 mb-20">
               {/* Card 1: card left, text right */}
               <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-15 mb-10">
                 <div
@@ -351,11 +370,29 @@ function Main() {
         </div>
       </main>
 
-      <footer className="bg-(--color-footer) p-8 mt-10">
-        <div className="general-footer-container
-          md:mx-12
-          lg:flex lg:justify-between
-        ">
+      <footer className="bg-(--color-footer) p-8 mt-50">
+        <div className="general-container-cta">
+          <div className="container-call relative -top-17 right-0 left-0 bg-(--color-footer-btn-cta) py-9 px-9 rounded-xl flex justify-center items-center flex-col">
+            <p className="mb-10 xl:w-[80em] text-center">
+              Está esperando o que para iniciar sua carreira hoje mesmo? São em pequenos passos que podemos fazer qualquer coisa! Venha participar da nossa comunidade, que acolhe novos, iniciantes e futuros desenvolvedores! <span className="text-white font-main text-lg font-bold group">devStart();</span>: <strong>um espaço colaborativo onde cada linha de código que você escreve te aproxima mais de um futuro promissor!</strong>
+            </p>
+            <div className="container-space">
+              <a href="" class="
+                  px-5 py-2
+                  bg-(--color-main-btn)
+                  hover:bg-(--color-main-btn-hover) transition-all ease-in duration-300
+                  rounded-sm
+                  md:px-10 md:py-3
+                  md:mr-5
+              ">
+                Entrar no Servidor
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="general-footer-container md:mx-12 lg:flex lg:justify-between">
           <div className="left-part-content mb-10">
             <span className="relative inline-block select-none">
               <span className="absolute inset-0 invisible">{text}</span>
@@ -375,9 +412,9 @@ function Main() {
               <ul className="list-options-container-1 text-(--color-paragraph) mt-3">
                 <li>
                   <a href="https://www.linkedin.com/in/nathan-monteiro/" target="_blank" rel="noopener noreferrer">Linkedin</a>
-                  </li>
+                </li>
                 <li><a href="https://github.com/nathanmontt" target="_blank" rel="noopener noreferrer">Github</a></li>
-                <li><a href="https://www.linkedin.com/in/nathan-monteiro/" target="_blank" rel="noopener noreferrer">Portifólio</a></li>
+                <li><a href="https://nathan-monteiro-portifolio.vercel.app/" target="_blank" rel="noopener noreferrer">Portifólio</a></li>
                 <li><a href="https://www.instagram.com/nathanmontt" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               </ul>
             </div>
@@ -388,10 +425,10 @@ function Main() {
               <p className="title-container-2 text-4xl">Regras</p>
               <ul className="list-options-container-2 mt-3 text-(--color-paragraph)">
                 <li>
-                  <a href="#" onClick={handleOpenRules}>Termos de Uso</a>
+                  <a href="#" onClick={handleOpenRules("termos")}>Termos de Uso</a>
                 </li>
                 <li>
-                  <a href="#" onClick={handleOpenRules}>Política de Privacidade</a>
+                  <a href="#" onClick={handleOpenRules("privacidade")}>Política de Privacidade</a>
                 </li>
               </ul>
             </div>
@@ -425,13 +462,13 @@ function Main() {
         </div>
 
         {/* Modal de Regras */}
-        {showRulesModal && (
+        {rulesModal !== "none" && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 bg-opacity-60"
             style={{ backdropFilter: "blur(2px)" }}
           >
             <div
-              className="bg-white text-black rounded-md p-6 max-w-md w-full mx-4 relative"
+              className="bg-white text-black rounded-md p-6 w-[600px] max-w-[95vw] mx-4 relative"
               style={{ minHeight: "200px" }}
             >
               <button
@@ -441,16 +478,20 @@ function Main() {
               >
                 ×
               </button>
-              <h2 className="text-center text-xl font-bold mb-4">Regras</h2>
+              <h2 className="text-center text-xl font-bold mb-4">
+                {rulesModal === "termos" ? "Termos de Uso" : "Política de Privacidade"}
+              </h2>
               <div>
-                <p>
-                  Aqui vão as regras, termos de uso ou política de privacidade do seu projeto.  
-                  Você pode personalizar este conteúdo conforme necessário.
-                </p>
+                {(rulesModal === "termos" ? termosUso : politicaPrivacidade).map((item, idx) => (
+                  <div key={idx} className="mb-2">
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         )}
+        
       </footer>
     </>
   );

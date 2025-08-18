@@ -12,6 +12,7 @@
   --color-secondary-btn-hover: #3e4148;
   --color-paragraph: #9fa1a8;
   --color-footer: #1d2230;
+  --color-footer-btn-cta: #1e183c;
 
   --font-main: "Rajdhani", sans-serif;
   --font-second: "Roboto", sans-serif;
@@ -24,7 +25,7 @@ html, body {
   scrollbar-width: none; /* Firefox */
 
   /* Testes */
-  /* background-color: #1d2230; */
+  /* background-color: #1e183c; */
 }
 
 body::-webkit-scrollbar, html::-webkit-scrollbar {
