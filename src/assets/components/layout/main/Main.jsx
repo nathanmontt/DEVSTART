@@ -200,7 +200,9 @@ function Main() {
           </ul>
 
           {/* Join Desktop */}
-          <a href="#" 
+          <a href="/api/discord-invite"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               hidden md:block ml-4
               px-7 py-2.5
@@ -318,8 +320,9 @@ function Main() {
 
                     md:inline-block
                 ">
-                  <a 
-                    href=""
+                  <a href="/api/discord-invite"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="
                       px-5 py-2
                       bg-(--color-main-btn)
@@ -477,7 +480,10 @@ function Main() {
               Está esperando o que para iniciar sua carreira hoje mesmo? São em pequenos passos que podemos fazer qualquer coisa! Venha participar da nossa comunidade, que acolhe novos, iniciantes e futuros desenvolvedores! <span className="text-white font-main text-lg font-bold group">devStart();</span>: <strong>um espaço colaborativo onde cada linha de código que você escreve te aproxima mais de um futuro promissor!</strong>
             </p>
             <div className="container-space">
-              <a href="" class="
+              <a href="/api/discord-invite"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="
                   px-5 py-2
                   bg-(--color-main-btn)
                   hover:bg-(--color-main-btn-hover) transition-all ease-in duration-300
